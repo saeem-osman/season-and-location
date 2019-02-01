@@ -1,28 +1,44 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Location from './Location'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+
+class App extends React.Component{
+    state = {
+        lat: null,
+        click: true,
+        err: '',
+        long: null,
+        
+    }
+    componentDidMount(){
+        window.navigator.geolocation.getCurrentPosition(
+            position =>this.setState({
+                    lat : position.coords.latitude,
+                    long : position.coords.longitude
+                }),
+            error =>this.setState({
+                    err: "Location not found",
+                    click: false,
+                })
+        )
+    }
+
+    render(){
+        
+       
+        return(
+            <Location 
+            lat = {this.state.lat}
+            click = {this.state.click}
+            err = {this.state.err}
+            long = {this.state.long}
+            month = {new Date().getMonth()}
+
+            />
+            
+        );
+    }
 }
 
-export default App;
+
+export default App

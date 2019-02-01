@@ -1,0 +1,50 @@
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+ .summer {
+    background: sandybrown;
+    
+    
+}
+
+.winter  {
+    background: rgb(177, 88, 228);
+    
+}
+
+ .rainy {
+    background: slategrey
+}
+
+.icon.snowflake {
+    color: rgb(156, 204, 194);
+}
+
+.icon.sun {
+    color: rgb(219, 63, 63);
+}
+.icon.cloud {
+    color: rgb(184, 156, 156);
+}
+
+.top-left {
+    left: 5px;
+    position: absolute;
+    top: 5px;
+}
+
+.bottom-right {
+    right: 5px;
+    bottom: 5px;
+    position: absolute;
+}
+.display h1 {
+    text-align: center;
+    font-size: 4rem;
+    color: rgb(43, 18, 102)
+
+}
